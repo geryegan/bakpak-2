@@ -24,14 +24,17 @@
   </div>
   <div class="col s5 explore"> 
   <h4 class="label"> Events </h4>
-  <div ng-repeat="event in events"> <b> <a href = {{event.url[0]}}>{{event.title[0]}} </a></b></div>
+  <div ng-repeat="event in events"> <b> <a href = {{event.url[0]}}>{{event.title[0]}}</a> @ <a href = {{event.venue_url[0]}}>{{event.venue_name[0]}}</a></b></div>
   </div>
 </div>
 <div>
   <input type="text" ng-model='translate' placeholder="TRANSLATE A PHRASE" /> </div>
-  <button type='submit' ng-click='translateApi()' >TRANSLATE</button>
-
-
+  <button type='submit' ng-click='translateApi()'>TRANSLATE</button>
 </div>
+<div>
+<h4 class="label"> Images </h4>
+<div ng-repeat="image in images">  <img ng-src = {{image.contentUrl}}></div>
+</div>
+
 
 

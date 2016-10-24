@@ -8,6 +8,7 @@ angular.module('bakpak.explore', [])
 	$scope.promos;
 	$scope.flights;
 	$scope.translate;
+	$scope.images;
 	$scope.restaurantsApi = function(){
 		$http({
 		  method: 'POST',
@@ -91,6 +92,19 @@ angular.module('bakpak.explore', [])
 		})
 		.then(function(data){
 		  $scope.translate = data.data.text[0];
+		})
+
+
+	}	
+	$scope.imagesApi = function(){
+		$http({
+		  method: 'POST',
+		  url: '/images',
+		  data: {city: $scope.city}
+		})
+		.then(function(data){
+			console.log('images', data.data.value)
+		  $scope.images = data.data.value;
 		})
 
 
